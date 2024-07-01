@@ -4,6 +4,7 @@ void main() {
   runApp(const MyApp());
 }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -23,22 +24,34 @@ class MyApp extends StatelessWidget {
                   location: 'kabdersteg, Switzerlan',
                 ),
                 ButtonSection(),
+                TextSection(description: 'Descripcion del panecillo'),
+                ImageSection(image: 'images/lake.jpg'),
                 TitleSection(
                   name: 'La Basilica',
                   location: 'Quito, Ecuador',
                 ),
                 ButtonSection(),
+                ////////////////////////////////////////////////////////////////////
+                TextSection(description: 'Descripcion de la basilica'),
+                ButtonSection(),
+                TextSection(description: 'Panecillo'),
                 TitleSection(name: 'La Ronda', location: 'Quito, Ecuador'),
+                ButtonSection(),
+                TextSection(description: 'Che'),
+                ////////////////////////////////////////////////////////////////////
                 TitleSection(
                   name: 'Ciudad la plata',
                   location: 'Argentina',
                 ),
                 ButtonSection(),
+                TextSection(description: 'Che'),
+                ////////////////////////////////////////////////////////////////////
                 TitleSection(
                   name: 'La mitad del mundo',
                   location: 'Quito, Ecuador',
                 ),
                 ButtonSection(),
+                TextSection(description: 'Aqui vino el luisito'),
               ]),
             )));
   }
@@ -112,6 +125,46 @@ class ButtonWithText extends StatelessWidget {
 }
 
 /////////////////////////////////////////////////////////////////////////
+
+class TextSection extends StatelessWidget {
+  const TextSection({
+    super.key,
+    required this.description,
+  });
+
+  final String description;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(32),
+      child: Text(
+        description,
+        softWrap: true,
+      ),
+    );
+  }
+}
+
+///////////////////////////////////////////////////////////////////////////
+
+class ImageSection extends StatelessWidget {
+  const ImageSection({super.key, required this.image});
+
+  final String image;
+
+  @override
+  Widget build(BuildContext context) {
+    return Image.asset(
+      image,
+      width: 600,
+      height: 240,
+      fit: BoxFit.cover,
+    );
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////
 class TitleSection extends StatelessWidget {
   const TitleSection({
     super.key,
