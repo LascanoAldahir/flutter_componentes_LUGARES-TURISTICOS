@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
                 ),
                 ButtonSection(),
                 TextSection(description: 'Descripcion del panecillo'),
-                ImageSection(image: 'images/lake.jpg'),
+                ImageSection(image: 'images/lake.jpeg'),
                 TitleSection(
                   name: 'La Basilica',
                   location: 'Quito, Ecuador',
